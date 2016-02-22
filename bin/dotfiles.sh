@@ -4,6 +4,7 @@ PWD=`pwd`
 cd $HOME/dotfiles
 
 git pull origin master
+git submodule add https://github.com/zsh-users/antigen.git antigen
 
 function doIt() {
   rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \

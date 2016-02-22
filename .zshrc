@@ -61,7 +61,7 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
 
 # Setup Docker
-eval "$(docker-machine env default)"
+which docker-machine > /dev/null && eval "$(docker-machine env default)"
 
 # pyenv init
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
