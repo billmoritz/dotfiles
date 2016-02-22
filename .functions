@@ -1,0 +1,22 @@
+# Update the hosts file on non linux systems
+update-docker-hosts(){
+  # clear existing *.docker.local entries from /etc/hosts
+  sudo sed -i '' '/\.docker\.local$/d' /etc/hosts
+
+  # iterate over each machine
+  docker-machine ls | tail -n +2 | awk '{print $1}' \
+  | while read -r MACHINE; do
+    MACHINE_IP="$(docker-machine ip ${MACHINE} 2>/dev/null)"
+    [[ -n $MACHINE_IP ]] && sudo /bin/bash -c "echo \"${MACHINE_IP} ${MACHINE}.docker.local\" >> /etc/hosts"
+    export no_proxy=$no_proxy,$MACHINE_IP
+  done
+}
+
+# Switch Chef Credentials
+function chefenv {
+  env=$1
+  [ -f $HOME/.chef/knife_$env.rb ] || return
+  [ -h $HOME/.chef/knife.rb ] && rm $HOME/.chef/knife.rb
+  ln -s $HOME/.chef/knife_$env.rb  $HOME/.chef/knife.rb
+  echo "switched to $env environment"
+}
