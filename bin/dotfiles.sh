@@ -3,8 +3,9 @@
 PWD=`pwd`
 cd $HOME/dotfiles
 
+echo "Doing git stuff..."
 git pull origin master
-git submodule add https://github.com/zsh-users/antigen.git antigen
+git submodule init --quiet && git submodule update --quiet && git submodule status
 
 function doIt() {
   rsync --exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
@@ -16,7 +17,8 @@ function doIt() {
 if [ "$1" = "--force" -o "$1" = "-f" ]; then
   doIt
 else
-  read -q "REPLY?This may overwrite existing files in your home directory. Are you sure? (y/n) "
+  echo ""
+  read -q "REPLY?This next step will rsync the repository dotfiles to your home directory and will overwrite existing files. Are you sure? (y/n) "
   echo ""
   if [[ $REPLY =~ ^[Yy]$ ]]; then
     doIt
