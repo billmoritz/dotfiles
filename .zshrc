@@ -8,6 +8,7 @@ if [[ "$OSTYPE" =~ "^darwin.*" ]]; then
   antigen-bundle battery
   antigen-bundle sublime
   antigen-bundle brew
+  antigen-bundle brew-cask
 fi
 
 antigen-bundle aws
@@ -16,11 +17,14 @@ antigen-bundle bundler
 antigen-bundle rake
 antigen-bundle ruby
 antigen-bundle rvm
+antigen-bundle gem
 antigen-bundle docker
+antigen-bundle docker-compose
 antigen-bundle python
 antigen-bundle pip
 antigen-bundle screen
-antigen-bundle sudo
+antigen-bundle terraform
+antigen-bundle redis-cli
 antigen-bundle golang
 
 antigen-bundle zsh-users/zsh-syntax-highlighting
