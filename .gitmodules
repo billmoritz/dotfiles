@@ -31,9 +31,6 @@
 [submodule ".vim/bundle/commentary"]
 	path = .vim/bundle/commentary
 	url = https://github.com/tpope/vim-commentary.git
-[submodule ".vim/bundle/copy-as-rtf"]
-	path = .vim/bundle/copy-as-rtf
-	url = https://github.com/zerowidth/vim-copy-as-rtf.git
 [submodule ".vim/bundle/dotenv"]
 	path = .vim/bundle/dotenv
 	url = https://github.com/tpope/vim-dotenv.git
