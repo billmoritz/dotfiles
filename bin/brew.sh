@@ -6,18 +6,16 @@ sudo true
 # Make sure we're current
 brew update && brew upgrade
 
-brew install ncdu
-brew install htop
+# Tools
+brew cask install vagrant vagrant-manager
+brew install wget ncdu htop ncdu jq
+brew install --with-stoken --with-oath-toolkit openconnect
 
+# Docker
 brew cask install virtualbox-extension-pack
-VBoxManage hostonlyif remove vboxnet0
-
-brew install docker
-brew install docker-machine
-brew install docker-compose
+brew install docker docker-machine docker-compose
 docker-machine create --driver virtualbox default
 
-brew install rabbitmq
-brew install memcached
-brew install mysql
+# Services
+brew install rabbitmq memcached mysql
 ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
