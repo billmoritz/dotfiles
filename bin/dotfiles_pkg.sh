@@ -8,7 +8,7 @@ brew update && brew upgrade
 
 # Tools
 brew cask install vagrant vagrant-manager
-brew install wget ncdu htop ncdu jq spellcheck
+brew install wget ncdu htop ncdu jq spellcheck letsencrypt
 brew install --with-stoken --with-oath-toolkit openconnect
 
 # Docker
