@@ -3,7 +3,7 @@ source $DOTFILES_BASE/antigen/antigen.zsh
 
 antigen-use oh-my-zsh
 
-if [[ "$OSTYPE" =~ "^darwin.*" ]]; then
+if [[ "$OSTYPE" =~ ^darwin.* ]]; then
   antigen-bundle osx
   antigen-bundle battery
   antigen-bundle sublime
@@ -42,12 +42,6 @@ export CFLAGS='-g -O2'
 # Set Editor
 export EDITOR='vim'
 
-# Aliases
-[ -f .aliases ] && source .aliases
-
-# Functions
-[ -f .functions ] && source .functions
-
 # SSH Keys
 [ -f .sshkeys ] && source .sshkeys
 # ssh-add -l | egrep "id_rsa_billmoritz" &> /dev/null ||  ssh-add $HOME/.ssh/id_rsa_billmoritz
@@ -74,3 +68,9 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 # Setup VIM
 mkdir -pv ~/.vim/_backup
 mkdir -pv ~/.vim/_temp
+
+# Aliases
+[ -f .aliases ] && source .aliases
+
+# Functions
+[ -f .functions ] && source .functions
