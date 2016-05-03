@@ -55,8 +55,8 @@ export GOPATH=$HOME/code/go
 export PATH=$PATH:$GOPATH/bin
 
 # Setup Ruby
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 export PATH="/usr/local/sbin:$PATH"
+export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # Setup Docker
 which docker-machine > /dev/null && eval "$(docker-machine env default)"
@@ -68,6 +68,9 @@ if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -
 # Setup VIM
 mkdir -pv ~/.vim/_backup
 mkdir -pv ~/.vim/_temp
+
+# Fix scp in antigen / oh-my-zsh
+alias scp='noglob scp'
 
 # Aliases
 [ -f .aliases ] && source .aliases
