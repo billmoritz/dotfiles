@@ -22,3 +22,8 @@ ln -sfv /usr/local/opt/mysql/*.plist ~/Library/LaunchAgents
 
 # Pip
 pip install pylama
+pip install pylint
+pip install pydocstyle
+pip install boto
+pip install sys
+pip install requests
