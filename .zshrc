@@ -1,5 +1,7 @@
 DOTFILES_BASE=$HOME/dotfiles
-source $DOTFILES_BASE/antigen/antigen.zsh
+
+# shellcheck source=$HOME/dotfiles/antigen/antigen.zsh
+. "${DOTFILES_BASE}/antigen/antigen.zsh"
 
 antigen-use oh-my-zsh
 
@@ -74,3 +76,6 @@ alias scp='noglob scp'
 
 # Functions
 [ -f .functions ] && source .functions
+
+# Private Aliases / Functions / Environment Variables
+[ -f .private_rc ] && source .private_rc
