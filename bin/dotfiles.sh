@@ -1,10 +1,7 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 PWD=`pwd`
-cd $HOME/dotfiles
-RSYNCOPTS='--exclude ".git/" --exclude ".DS_Store" --exclude "bootstrap.sh" \
-  --exclude "README.md" --exclude ".gitmodules" --exclude "antigen" \
-  --no-perms . ~'
+cd $HOME/dotfiles || exit
 
 echo "Doing git stuff..."
 git pull origin master
@@ -36,4 +33,4 @@ else
 fi
 unset doIt
 
-cd $PWD
+cd $PWD || exit

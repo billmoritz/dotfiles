@@ -1,4 +1,4 @@
-#!/usr/bin/env zsh
+#!/usr/bin/env bash
 
 INSTALLDIR="$HOME/Library/Application Support/Sublime Text 3/Installed Packages"
 PACKAGEDIR="$HOME/Library/Application Support/Sublime Text 3/Packages/User"
