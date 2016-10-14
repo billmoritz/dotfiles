@@ -3,40 +3,40 @@ DOTFILES_BASE=$HOME/dotfiles
 # shellcheck source=$HOME/dotfiles/antigen/antigen.zsh
 . "${DOTFILES_BASE}/antigen/antigen.zsh"
 
-antigen-use oh-my-zsh
+antigen use oh-my-zsh
 
 if [[ "$OSTYPE" =~ ^darwin.* ]]; then
-  antigen-bundle osx
-  antigen-bundle battery
-  antigen-bundle sublime
-  antigen-bundle brew
-  antigen-bundle brew-cask
+  antigen bundle osx
+  antigen bundle battery
+  antigen bundle sublime
+  antigen bundle brew
+  antigen bundle brew-cask
 fi
 
-antigen-bundle aws
-antigen-bundle git
-antigen-bundle bundler
-antigen-bundle rake
-antigen-bundle ruby
-antigen-bundle rvm
-antigen-bundle gem
-antigen-bundle docker
-antigen-bundle docker-compose
-antigen-bundle python
-antigen-bundle pip
-antigen-bundle screen
-antigen-bundle terraform
-antigen-bundle redis-cli
-antigen-bundle golang
+antigen bundle aws
+antigen bundle git
+antigen bundle bundler
+antigen bundle rake
+antigen bundle ruby
+antigen bundle rvm
+antigen bundle gem
+antigen bundle docker
+antigen bundle docker-compose
+antigen bundle python
+antigen bundle pip
+antigen bundle screen
+antigen bundle terraform
+antigen bundle redis-cli
+antigen bundle golang
 
-antigen-bundle zsh-users/zsh-syntax-highlighting
-antigen-bundle zsh-users/zsh-history-substring-search
-#antigen-bundle $DOTFILES_BASE/bundles/stv
+antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-history-substring-search
+#antigen bundle $DOTFILES_BASE/bundles/stv
 
-#antigen-theme $DOTFILES_BASE/themes/mgdm/mgdm.zsh-theme
+#antigen theme $DOTFILES_BASE/themes/mgdm/mgdm.zsh-theme
 antigen theme juanghurtado
 
-antigen-apply
+antigen apply
 
 # Speed up compile time
 export CFLAGS='-g -O2'
