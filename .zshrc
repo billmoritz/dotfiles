@@ -10,7 +10,6 @@ if [[ "$OSTYPE" =~ ^darwin.* ]]; then
   antigen bundle battery
   antigen bundle sublime
   antigen bundle brew
-  antigen bundle brew-cask
 fi
 
 antigen bundle aws
