@@ -78,3 +78,6 @@ alias scp='noglob scp'
 
 # Private Aliases / Functions / Environment Variables
 [ -f .private_rc ] && source .private_rc
+
+# Direnv setup
+eval "$(direnv hook zsh)"
