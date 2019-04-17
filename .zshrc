@@ -1,7 +1,6 @@
 DOTFILES_BASE=$HOME/dotfiles
 
-# shellcheck source=$HOME/dotfiles/antigen/antigen.zsh
-. "${DOTFILES_BASE}/antigen/antigen.zsh"
+source $HOME/.antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -27,13 +26,15 @@ antigen bundle screen
 antigen bundle terraform
 antigen bundle redis-cli
 antigen bundle golang
+antigen bundle minikube
 
 antigen bundle zsh-users/zsh-syntax-highlighting
+antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
-#antigen bundle $DOTFILES_BASE/bundles/stv
 
-#antigen theme $DOTFILES_BASE/themes/mgdm/mgdm.zsh-theme
-antigen theme juanghurtado
+# https://denysdovhan.com/spaceship-prompt/
+antigen theme denysdovhan/spaceship-prompt
+#antigen theme juanghurtado
 
 antigen apply
 
@@ -59,6 +60,9 @@ export PATH=$PATH:$GOPATH/bin
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
+# Homebrew cask path
+export PATH="$PATH:$HOME/local/bin"
+
 # pyenv init
 if which pyenv > /dev/null; then eval "$(pyenv init -)"; fi
 if which pyenv-virtualenv-init > /dev/null; then eval "$(pyenv virtualenv-init -)"; fi
@@ -79,5 +83,16 @@ alias scp='noglob scp'
 # Private Aliases / Functions / Environment Variables
 [ -f .private_rc ] && source .private_rc
 
+fortune | cowsay | lolcat
+
+# Print outdated brew packages on login
+[ -f motd.txt ] && cat motd.txt
+
+source <(minikube completion zsh)
+
 # Direnv setup
 eval "$(direnv hook zsh)"
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/wmoritz/.sdkman"
+[[ -s "/Users/wmoritz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/wmoritz/.sdkman/bin/sdkman-init.sh"
