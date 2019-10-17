@@ -12,12 +12,15 @@ fi
 antigen bundle aws
 antigen bundle git
 antigen bundle bundler
+antigen bundle battery
+antigen bundle droplr
 antigen bundle rake
 antigen bundle rbenv
 antigen bundle ruby
 antigen bundle gem
 antigen bundle docker
 antigen bundle docker-compose
+antigen bundle pyenv
 antigen bundle python
 antigen bundle pip
 antigen bundle screen
@@ -43,8 +46,7 @@ export CFLAGS='-g -O2'
 export EDITOR='vim'
 
 # SSH Keys
-[ -f .sshkeys ] && source .sshkeys
-# ssh-add -l | egrep "id_rsa_billmoritz" &> /dev/null ||  ssh-add $HOME/.ssh/id_rsa_billmoritz
+[ -f .ssh/.ssh-add ] && source .ssh/.ssh-add
 
 # Local Path
 export PATH=$PATH:$HOME/bin
@@ -91,6 +93,18 @@ source <(minikube completion zsh)
 # Direnv setup
 eval "$(direnv hook zsh)"
 
+# TFSwitch auto 
+load-tfswitch() {
+  local tfswitchrc_path=".tfswitchrc"
+
+  if [ -f "$tfswitchrc_path" ]; then
+    tfswitch
+  fi
+}
+add-zsh-hook chpwd load-tfswitch
+load-tfswitch
+
+# SDKMan setup
 export SDKMAN_DIR="~/.sdkman"
 [[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
 
