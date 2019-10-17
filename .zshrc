@@ -1,6 +1,4 @@
-DOTFILES_BASE=$HOME/dotfiles
-
-source $HOME/.antigen/antigen.zsh
+source /usr/local/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -15,8 +13,8 @@ antigen bundle aws
 antigen bundle git
 antigen bundle bundler
 antigen bundle rake
+antigen bundle rbenv
 antigen bundle ruby
-antigen bundle rvm
 antigen bundle gem
 antigen bundle docker
 antigen bundle docker-compose
@@ -58,7 +56,7 @@ export PATH=$PATH:$GOPATH/bin
 
 # Setup Ruby
 export PATH="/usr/local/sbin:$PATH"
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
+eval "$(rbenv init -)"
 
 # Homebrew cask path
 export PATH="$PATH:$HOME/local/bin"
@@ -93,6 +91,13 @@ source <(minikube completion zsh)
 # Direnv setup
 eval "$(direnv hook zsh)"
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/wmoritz/.sdkman"
-[[ -s "/Users/wmoritz/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/wmoritz/.sdkman/bin/sdkman-init.sh"
+export SDKMAN_DIR="~/.sdkman"
+[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
+
+if [ -f ~/.ansible/env.sh ]; then
+    . ~/.ansible/env.sh
+    # To disable ansible, comment out, but do not delete the following:
+    #activate_ansible
+fi
+
+export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault/key
