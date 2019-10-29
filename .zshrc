@@ -105,8 +105,7 @@ add-zsh-hook chpwd load-tfswitch
 load-tfswitch
 
 # SDKMan setup
-export SDKMAN_DIR="~/.sdkman"
-[[ -s "~/.sdkman/bin/sdkman-init.sh" ]] && source "~/.sdkman/bin/sdkman-init.sh"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
 
 if [ -f ~/.ansible/env.sh ]; then
     . ~/.ansible/env.sh
@@ -115,3 +114,5 @@ if [ -f ~/.ansible/env.sh ]; then
 fi
 
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault/key
+
+export SDKMAN_OFFLINE_MODE=false
