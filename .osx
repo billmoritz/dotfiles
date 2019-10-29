@@ -253,6 +253,12 @@ defaults write com.apple.finder FXInfoPanesExpanded -dict \
 # Set the icon size of Dock items
 defaults write com.apple.dock tilesize -int 30
 
+# Dock magnification
+defaults write com.apple.dock magnification -bool true
+
+# Icon size of magnified Dock items
+defaults write com.apple.dock largesize -int 64
+
 # Enable spring loading for all Dock items
 # defaults write com.apple.dock enable-spring-load-actions-on-all-items -bool true
 
