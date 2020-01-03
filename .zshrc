@@ -116,3 +116,7 @@ fi
 export ANSIBLE_VAULT_PASSWORD_FILE=~/.vault/key
 
 export SDKMAN_OFFLINE_MODE=false
+export PATH="/usr/local/opt/curl/bin:$PATH"
+
+test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
+
