@@ -20,9 +20,10 @@ Plugin 'JamshedVesuna/vim-markdown-preview'
 Plugin 'kien/ctrlp.vim'
 Plugin 'mattn/gist-vim'
 Plugin 'nanotech/jellybeans.vim'
+Plugin 'lifepillar/vim-solarized8'
 Plugin 'powerline/powerline'
 Plugin 'rodjek/vim-puppet'
-Plugin 'scrooloose/syntastic'
+Plugin 'vim-syntastic/syntastic'
 Plugin 't9md/vim-chef'
 Plugin 'tmhedberg/SimpylFold'
 Plugin 'tpope/vim-bundler'
@@ -63,7 +64,7 @@ call pathogen#infect()
 filetype plugin indent on
 
 set background=dark
-color jellybeans
+color solarized8
 set nonumber
 set ruler       " show the cursor position all the time
 set cursorline
