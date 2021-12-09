@@ -1,0 +1,17 @@
+# https://starship.rs/config/ 
+
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Disable the package module, hiding it from the prompt completely
+[time]
+disabled = false
+
+[git_metrics]
+disabled = false
+
+[kubernetes]
+disabled = false
+
+[status]
+disabled = false

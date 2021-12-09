@@ -20,3 +20,10 @@ function chefenv {
   ln -s $HOME/.chef/knife_$env.rb  $HOME/.chef/knife.rb
   echo "switched to $env environment"
 }
+
+alias gib_login='gib gus auth:login'
+alias gib_token='gib gus auth:token'
+alias gib_token_copy='gib gus auth:token | pbcopy'
+alias heroku_login='heroku auth:login'
+alias heroku_token='heroku auth:token'
+alias heroku_token_copy='heroku auth:token | pbcopy'
