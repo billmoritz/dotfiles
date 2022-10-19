@@ -1,4 +1,4 @@
-source /usr/local/share/antigen/antigen.zsh
+source /opt/homebrew/share/antigen/antigen.zsh
 
 antigen use oh-my-zsh
 
@@ -32,9 +32,9 @@ antigen bundle rbenv
 antigen bundle redis-cli
 antigen bundle ruby
 antigen bundle screen
-antigen bundle spotify
 antigen bundle terraform
 
+antigen bundle zsh-users/zsh-completions
 antigen bundle zsh-users/zsh-autosuggestions
 antigen bundle zsh-users/zsh-history-substring-search
 antigen bundle zsh-users/zsh-syntax-highlighting
@@ -82,6 +82,7 @@ export PATH="/usr/local/sbin:$PATH"
 eval "$(rbenv init -)"
 
 # Homebrew cask path
+# eval "$(/opt/homebrew/bin/brew shellenv)"
 export PATH="$PATH:$HOME/local/bin"
 
 # pyenv init
@@ -117,6 +118,7 @@ fortune | cowsay | lolcat
 # Print outdated brew packages on login
 [ -f motd.txt ] && cat motd.txt
 
+source <(kubectl completion zsh)
 source <(minikube completion zsh)
 source <(gh completion -s zsh)
 source <(yq shell-completion zsh)
@@ -153,5 +155,3 @@ export SDKMAN_OFFLINE_MODE=false
 export PATH="/usr/local/opt/curl-openssl/bin:$PATH"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-source /Users/wmoritz/.bootstrap_rc
